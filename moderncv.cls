@@ -130,7 +130,15 @@
     pdfauthor     = {\@firstname{}~\@lastname{}},
     pdftitle      = {\@firstname{}~\@lastname{}\notblank{\@title}{ -- \@title}{}},
     pdfsubject    = {Resum\'{e} of \@firstname{}~\@lastname{}},
-    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, resum\'{e}}}}
+    pdfkeywords   = {\@firstname{}~\@lastname{}, curriculum vit\ae{}, resum\'{e}},
+    % unicode.      = true,
+    % colorlinks	  = true,
+    linkcolor     = black,
+    citecolor	    = black,
+    urlcolor	    = black,
+    breaklinks	  = true,
+    }}
+  
 
 % graphics
 \RequirePackage{graphicx}
@@ -152,9 +160,11 @@
       \@ifundefined{r@lastpage}{}{%
         \ifthenelse{\pageref{lastpage}>1}{%
           \newlength{\pagenumberwidth}%
-          \settowidth{\pagenumberwidth}{\color{color2}\addressfont\itshape\strut\thepage/\pageref{lastpage}}%
+          \settowidth{\pagenumberwidth}{\color{color2}\pagenumberfont\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
+            \fancyfoot[l]{\color{color2}\pagenumberfont\today}%
+            \fancyfoot[c]{\color{color2}\pagenumberfont Curriculum Vitae}%
+            \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
           \pagestyle{plain}}{}}\fi}%
   \AtEndDocument{\label{lastpage}}}
 \pagestyle{plain}
@@ -191,7 +201,7 @@
 % compatibility package with older versions of moderncv
 \RequirePackageWithOptions{moderncvcompatibility}
 
-\RequirePackage{l3regex}
+%\RequirePackage{l3regex}
 
 %-------------------------------------------------------------------------------
 %                class definition
@@ -416,7 +426,7 @@
 \newcommand*{\sectionfont}{}
 \newcommand*{\subsectionfont}{}
 \newcommand*{\hintfont}{}
-\newcommand*{\pagenumberfont}{\addressfont\itshape}
+\newcommand*{\pagenumberfont}{\addressfont}
 % fake small caps - cfr http://tex.stackexchange.com/questions/55664/fake-small-caps-with-xetex-fontspec
 %\def\fakesc{\bgroup\obeyspaces\fakescaux}
 %\def\fakescaux#1{\fakescauxii #1\relax\relax\egroup}

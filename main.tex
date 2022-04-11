@@ -1,0 +1,355 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+%----------------------------------------------------------------
+% FORMATING
+%----------------------------------------------------------------
+
+\documentclass[10.5pt, letterpaper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+%% moderncv themes
+% style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvstyle{classic}
+% color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\moderncvcolor{blue}
+\moderncvicons{awesome}
+%\renewcommand{\familydefault}{\rmdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+
+% adjust the page margins
+% \usepackage[scale=0.8]{geometry}
+\usepackage[top=2.4cm, bottom=2.4cm, left=2.2cm, right=2.2cm]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}                % if you want to change the width of the column with the dates
+% \setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+%----------------------------------------------------------------
+% PERSONAL DATA
+%----------------------------------------------------------------
+\name{Josh}{Jacobson}
+%\title{Curriculum Vitae}                           % optional, remove / comment the line if not wanted
+% \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
+% \phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{joshj@uow.edu.au}                   % optional, remove / comment the line if not wanted
+\homepage{joshhjacobson.github.io}                   % optional, remove / comment the line if not wanted
+\social[linkedin]{joshhjacobson}                        % optional, remove / comment the line if not wanted
+\social[github]{joshhjacobson}                             % optional, remove / comment the line if not wanted
+% \social[bitbucket]{jdoe}                              % optional, remove / comment the line if not wanted
+% \extrainfo{additional information}                   % optional, remove / comment the line if not wanted
+% \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+
+%----------------------------------------------------------------
+% BIB FORMAT
+%----------------------------------------------------------------
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+% \makeatletter
+% \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+% \makeatother
+% \renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+\usepackage[%
+  backend=biber,
+%  natbib=true,
+  style=ext-authoryear,
+  sorting=ydnt,
+  citestyle=numeric,
+  giveninits=true,
+  useprefix=true,
+  dashed=false,
+  uniquename=false,
+  uniquelist=false,
+  maxcitenames=2,
+  maxbibnames=10,
+  articlein=false,
+  alldates=year,
+  hyperref=true,
+  doi=false,
+  url=false,
+  isbn=false
+]{biblatex}
+\addbibresource{publications.bib}
+\addbibresource{publications_inprep.bib}
+
+\defbibenvironment{itemize}
+  {\list
+     {\printtext[labelnumberwidth]{\textbullet}}
+     {\setlength{\topsep}{0pt}% layout parameters from moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+
+\defbibenvironment{enumerate}
+  {\list
+     {\printtext[labelnumberwidth]{% label format from numeric.bbx
+        \printfield{labelprefix}%
+        \printfield{labelnumber}\adddot\midsentence}}
+     {\setlength{\topsep}{0pt}% layout parameters from moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}
+  
+% Make specific author names bold
+\makeatletter
+\def\nhblx@bibfile@name{\jobname -nhblx.bib}
+\newwrite\nhblx@bibfile
+\immediate\openout\nhblx@bibfile=\nhblx@bibfile@name
+
+\immediate\write\nhblx@bibfile{%
+  @comment{Auto-generated file}\blx@nl}
+
+\newcounter{nhblx@name}
+\setcounter{nhblx@name}{0}
+
+\newcommand*{\nhblx@writenametobib}[1]{%
+  \stepcounter{nhblx@name}%
+  \edef\nhblx@tmp@nocite{%
+    \noexpand\AfterPreamble{%
+      \noexpand\setbox0\noexpand\vbox{%
+        \noexpand\nhblx@getmethehash{nhblx@name@\the\value{nhblx@name}}}}%
+  }%
+  \nhblx@tmp@nocite
+  \immediate\write\nhblx@bibfile{%
+    @misc{nhblx@name@\the\value{nhblx@name}, author = {\unexpanded{#1}}, %
+          options = {dataonly=true},}%
+  }%
+}
+
+\AtEndDocument{%
+  \closeout\nhblx@bibfile}
+
+\addbibresource{\nhblx@bibfile@name}
+
+\newcommand*{\nhblx@boldhashes}{}
+\DeclareNameFormat{nhblx@hashextract}{%
+  \xifinlist{\thefield{hash}}{\nhblx@boldhashes}
+    {}
+    {\listxadd{\nhblx@boldhashes}{\thefield{hash}}}}
+
+\DeclareCiteCommand{\nhblx@getmethehash}
+  {}
+  {\printnames[nhblx@hashextract][1-999]{author}}
+  {}
+  {}
+
+\newcommand*{\addboldnames}{\forcsvlist\nhblx@writenametobib}
+\newcommand*{\resetboldnames}{\def\nhblx@boldhashes{}}
+
+\newcommand*{\mkboldifhashinlist}[1]{%
+  \xifinlist{\thefield{hash}}{\nhblx@boldhashes}
+    {\mkbibbold{#1}}
+    {#1}}
+\makeatother
+
+\DeclareNameWrapperFormat{boldifhashinlist}{%
+  \renewcommand*{\mkbibcompletename}{\mkboldifhashinlist}%
+  #1}
+
+\DeclareNameWrapperAlias{sortname}{default}
+\DeclareNameWrapperAlias{default}{boldifhashinlist}
+
+\addboldnames{Josh Jacobson, Joshuah Jacobson}
+
+% Reverse numbering in publications list
+\newcounter{entrycount}
+\AtDataInput{\stepcounter{entrycount}}
+\DeclareFieldFormat{labelnumber}{\mkrevbibnum{#1}}
+\newcommand{\mkrevbibnum}[1]{\number\numexpr\value{entrycount}-1-#1}
+
+% Add hyperlink to titles
+\newbibmacro{string+doiurlisbn}[1]{%
+  \iffieldundef{doi}{%
+    \iffieldundef{url}{%
+      \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+          #1%
+        }{%
+          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+        }%
+      }{%
+        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+      }%
+    }{%
+      \href{\thefield{url}}{#1}%
+    }%
+  }{%
+    \href{http://dx.doi.org/\thefield{doi}}{#1}%
+  }%
+}
+
+% Remove quotes from title and add hyperlink
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}%
+    {\usebibmacro{string+doiurlisbn}{\color{color0}#1\isdot}}
+    
+% Set titles to sentence case
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{titlecase:title}{\MakeSentenceCase*{#1}}
+
+% Comma before and after journal volume
+\renewbibmacro*{volume+number+eid}{%
+  \setunit*{\addcomma\space}% 
+  \printfield{volume}%
+  \setunit*{\addcomma\space}%
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+
+
+%----------------------------
+
+
+%----------------------------------------------------------------------------------
+% CONTENT
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+\section{Research Interests}
+\cvitem{}{Spatio-temporal statistics; Environmental statistics; Uncertainty quantification; High performance computing; Data science; Data visualization}
+
+\section{Education}
+\cventry{2020--present}{Ph.D., Applied Statistics}{University of Wollongong}{Wollongong, NSW}{}{Thesis: Statistical Methods for the Joint Prediction of Environmental Processes from Remote Sensing Data\newline{} Advisors: Noel Cressie and Andrew Zammit Mangion}
+\cventry{2018--2020}{M.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Thesis: Verification of Spatial Structure in Ensembles of Forecast Fields\newline{} Advisors: Will Kleiber and Michael Scheuerer}
+\cventry{2015--2019}{B.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
+
+\section{Experience}
+\cventry{2021--present}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Details on current projects}
+\cventry{2021--present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{
+Web project and wombat work.}
+\cventry{2019--2020}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{
+Improving the efficiency of Jupiter's hazards model by transitioning the calculations from Python to a distributed, parallel framework in the Julia language. This could save Jupiter thousands of dollars in compute time. Experiments regarding uncertainty quantification for parameters of the hazards model will also be carried out as time allows. }
+\cventry{2019}{Data Science Intern}{Jupiter Intelligence}{Boulder, CO}{}{
+Developed a statistical model to generate physically realistic, regional sea level rise (SLR) projections for the next century at an annual resolution. Quantified the uncertainty introduced into Jupiter's hazards model by including the SLR generator in a Monte Carlo experiment. }
+\cventry{2017-2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{
+Developed \href{https://github.com/ParasolJS/parasol-es}{Parasol}, a JavaScript library for interactive visualization of multi-objective optimization problems (e.g. water resources planning and decision making). The library packages a suite of visualization and machine learning techniques into a streamlined framework, allowing decision makers to quickly build shareable web applications for exploring tradeoffs in optimization results \cite{RasemanEtAl2019}. }
+\cventry{2017}{Data Engineering Intern}{VictorOps}{Boulder, CO}{}{Analyzed the company's data pipeline for symmetry between large SQL databases of consumer logins. This work branched into the development of an R package to streamline database queries and other common data wrangling tasks within the company. The package was reviewed and pushed to production.}
+
+
+% Publications from a Biblatex
+\section{Publications}
+\nocite{*}
+\printbibliography[title={In Preparation}, heading=subbibliography, type=unpublished, env=itemize]
+\printbibliography[title={Published}, heading=subbibliography, type=article, env=enumerate]
+
+\section{Presentations}
+\subsection{Conferences \& Workshops}
+\cvline{2022-04}{\textit{Approximate Bayesian computation for non-stationary processes} \newline{} Jupiter Intelligence, Boulder, CO, USA}
+\cvline{2021-07}{\textit{Multivariate spatial prediction of column-averaged carbon dioxide over North America} \newline{} Australian Mathematical Sciences Institute (AMSI) Winter School, Virtual}
+\cvline{2021-07}{\textit{Spatial prediction of column-averaged carbon dioxide over the globe} \newline{} Australian and New Zealand Statistical Conference (ANZSC), Virtual}
+\cvline{2019-12}{\textit{Improving interpretability of multi-objective tradeoff sets for environmental systems} \newline{} American Geophysical Union (AGU) Fall Meeting, San Francisco, CA, USA}
+\cvline{2019-08}{\textit{Uncertainty quantification for sea level rise} \newline{} Jupiter Intelligence, Boulder, CO, USA}
+\cvline{2018-09}{\textit{Interactive visualizations for multi-objective optimization problems} \newline{} RMACC HPC Symposium, Boulder, CO, USA}
+
+\subsection{Seminars \& Colloquia}
+\cvline{2019-11}{\textit{Verification of spatial structure in ensembles of forecast fields} \newline{} Department of Mathematics, University of Zurich, Zurich, Switzerland}
+
+\subsection{Poster}
+\cvline{2021-07}{\textit{Multivariate spatial-dependence modelling with satellite data} \newline{} Early Career \& Student Statisticians Conference, Virtual}
+\cvline{2020-12}{\textit{Flexible methodology for hyperlocal flooding risk due to sea level rise} \newline{} American Geophysical Union (AGU) Fall Meeting, Virtual}
+
+
+\section{Conferences}
+\cvline{2021-07}{Australian and New Zealand Statistical Conference (ANZSC). Virtual.}
+\cvline{2019-07}{Joint Statistical Meetings (JSM). Denver, CO, USA.}
+
+\section{Workshops}
+\cvline{2021-07}{``Winter School on Statistical Data Science.'' Australian Mathematical Sciences Institute (AMSI). Virtual.}
+
+
+\section{Teaching}
+\cvline{Fall 2018}{Teaching Assistant, APPM 4/5350: Fourier Series and Boundary Value Problems}
+\cvline{Fall 2016}{Teaching Assistant, CSCI 1320: Introduction to Programming for Engineers}
+
+\section{Service, Leadership, \& Synergistic Activities}
+\cventry{2019}{Radio Show Host}{Department of Applied Mathematics, University of Colorado}{Boulder, CO}{}{Probably Novel Radio Show and Podcast intends to bring research achievements of STEM undergraduates to the public sphere and make them more accessible to a broad audience.}
+
+\cventry{2017--2018}{Resident Advisor}{University of Colorado}{Boulder, CO}{}{}
+
+\cventry{2016--2018}{Engineering Honors Program Mentor}{College of Engineering \& Applied Science, University of Colorado}{Boulder, CO}{}{}
+
+\subsection{Writing}
+\cvline{2022-03}{``\href{https://www.uow.edu.au/niasra/our-research/centre-for-environmental-informatics/web-projects/global-co2-flux/}{Global CO2 Flux: Bayesian statistical inversion using the WOMBAT framework}.'' Centre for Environmental Informatics, University of Wollongong}
+
+\section{Honors, Awards, \& Fellowships}
+\cvline{2021}{Allison Harcourt Poster Award: 1st, Early Career \& Student Statisticians Conference}
+\cvline{2021}{ECSSC 2021 Scholarship, Early Career \& Student Statisticians Conference}
+\cvline{2021}{Statistical Data Science Scholarship, Australian Mathematical Sciences Institute (AMSI)}
+\cvline{2020--2024}{University Postgraduate Award, University of Wollongong}
+\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October, 2020}
+\cvline{2019}{Active Learning Award, College of Engineering and Applied Science, University of Colorado}
+\cvline{2017}{Global Seminar Funding, Engineering Honors Program, University of Colorado}
+\cvline{2016}{Honorable Mention, International Mathematical Contest in Modeling, Consortium for Mathematics and its Applications}
+\cvline{2015--2019}{Dean's List, University of Colorado}
+\cvline{2015--2019}{Engineering Merit Scholarship, University of Colorado}
+\cvline{2015--2019}{Hale Esteemed Scholar Award, University of Colorado}
+
+\section{Professional Memberships}
+\cvline{2021--present}{Statistical Society of Australia (SSA)}
+\cvline{2019--present}{American Statistical Association (ASA)}
+\cvline{2019--present}{Society for Industrial and Applied Mathematics (SIAM)}
+
+
+\section{Computer Skills}
+\cvline{Basic}{JavaScript, Shell-scripting}
+\cvline{Intermediate}{Git, Julia, Linux, \LaTeX, Matlab}
+\cvline{Advanced}{Python, R}
+
+\section{Selected Coursework (* indicates graduate level)}
+\subsection{Probability \& Statistics}
+\cvline{}{Spatial Statistics*, Statistical Modeling*, Statistical Learning, Mathematical Statistics*, Applied Probability, Markov Processes and Monte Carlo Simulations*, Time Series Analysis*, Experimental Design*}
+\subsection{Applied Mathematics}
+\cvline{}{Multivariable Calculus, Differential Equations, Linear Algebra, Numerical Analysis*, Real Analysis, Complex Analysis, Fourier Series and Boundary Value Problems, Data Assimilation*}
+\subsection{Climate Science}
+\cvline{}{Climate Modeling, Physical Oceanography, Radiative Transfer and Remote Sensing*, Objective Data Analysis*}
+\subsection{Computer Science}
+\cvline{}{Data Structures, Computer Systems, Algorithms, Introduction to Data Science}
+
+
+
+%----------------------------------------------------------------------------------
+% COVER LETTER
+%----------------------------------------------------------------------------------
+% \clearpage
+
+% % recipient data
+% \recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+% \date{January 01, 1984}
+% \opening{Dear Sir or Madam,}
+% \closing{Yours faithfully,}
+% \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+% \makelettertitle
+
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+
+% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
+
+% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+
+% Albert Einstein discovered that $e=mc^2$ in 1905.
+
+% \[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+
+% \makeletterclosing
+
+
+\end{document}
+
+
+%% end of file `template.tex'.
