@@ -26,18 +26,18 @@
 % hook for the description environment
 \def\deschook{}
 % original environment definitions, with hooks added
-\def\enumerate{%
-  \ifnum \@enumdepth >\thr@@\@toodeep\else
-    \advance\@enumdepth\@ne
-    \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
-      \expandafter
-      \list
-        \csname label\@enumctr\endcsname
-        {%
-          \enumhook \csname enumhook\romannumeral\the\@enumdepth\endcsname%
-          \usecounter\@enumctr\def\makelabel##1{\hss\llap{##1}}%
-        }%
-  \fi}
+%\def\enumerate{%
+%  \ifnum \@enumdepth >\thr@@\@toodeep\else
+%    \advance\@enumdepth\@ne
+%    \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+%      \expandafter
+%      \list
+%        \csname label\@enumctr\endcsname
+%        {%
+%          \enumhook \csname enumhook\romannumeral\the\@enumdepth\endcsname%
+%          \usecounter\@enumctr\def\makelabel##1{\hss\llap{##1}}%
+%        }%
+%  \fi}
 \def\itemize{%
   \ifnum \@itemdepth >\thr@@\@toodeep\else
     \advance\@itemdepth\@ne
