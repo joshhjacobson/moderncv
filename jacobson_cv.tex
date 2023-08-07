@@ -42,6 +42,7 @@
 \homepage{joshhjacobson.com}                   % optional, remove / comment the line if not wanted
 \social[linkedin]{joshhjacobson}                        % optional, remove / comment the line if not wanted
 \social[github]{joshhjacobson}                             % optional, remove / comment the line if not wanted
+\social[orcid]{0000-0003-4418-2208}
 % \social[bitbucket]{jdoe}                              % optional, remove / comment the line if not wanted
 % \extrainfo{additional information}                   % optional, remove / comment the line if not wanted
 % \photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
@@ -224,39 +225,54 @@
 
 \section{Research Interests}
 \cvitem{}{
-%Species distribution and biodiversity modeling \textbullet\,%
-Spatial ecology \textbullet\,%
-Spatiotemporal statistics \textbullet\,%
+Spatio-temporal statistics \textbullet\,%
 Bayesian hierarchical modeling \textbullet\,%
-Joint species distribution modeling \textbullet\,%
-Forest ecology, dynamics, and biodiversity \textbullet\,%
-Animal movement \textbullet\,%
 Approximate Bayesian computation \textbullet\,%
 Extreme-value theory \textbullet\,%
-Ecosystem responses to environmental change%
+Computational statistics \textbullet\,%
+Climate \& environmental applications
 }
 
 \section{Education}
-\cventry{2020--present}{Ph.D., Applied Statistics}{University of Wollongong}{Wollongong, NSW}{}{Thesis: Statistical Methods for the Joint Prediction of Environmental Processes from Remote Sensing Data\newline{} Advisors: Noel Cressie and Andrew Zammit Mangion}
-\cventry{2018--2020}{M.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Thesis: Verification of Spatial Structure in Ensembles of Forecast Fields\newline{} Advisors: Will Kleiber and Michael Scheuerer}
-\cventry{2015--2019}{B.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
+\cventry{2020 -- present}{Ph.D., Applied Statistics}{University of Wollongong}{Wollongong, NSW}{}{Advisors: Noel Cressie \& Andrew Zammit Mangion}
+\cventry{2018 -- 2020}{M.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Advisors: Will Kleiber \& Michael Scheuerer}
+\cventry{2015 -- 2019}{B.S., Applied Mathematics}{University of Colorado, Graduation with Honors}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
 
 \section{Experience}
-\cventry{2021--present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{Updated the group's CO$_2$ flux-inversion framework for compatibility with different atmospheric transport models; translated technical research articles into public-facing content.}
-\cventry{2021--2023}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Developed a non-stationary Bayesian copula model for analysis of multivariate extreme events; identified and implemented an approximate Bayesian computation algorithm suitable for non-stationary data; collaborated as a core developer of a proprietary Python package for statistical modeling.}
-\cventry{2019--2020}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Contributed to development of a statistical emulator for hydrologic model output using boundary-condition inputs; %
+\cventry{2021 -- present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{Conducted initial investiagations into adding compatibility for different atmospheric transport models in the centre's CO$_2$ flux-inversion framework; translated technical research articles into public-facing content.}
+\cventry{2021 -- 2023}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Developed a non-stationary Bayesian copula model for analysis of multivariate extreme events; researched and implemented an approximate Bayesian computation algorithm suitable for non-stationary data; collaborated as a core developer of a proprietary Python package for statistical modeling.}
+\cventry{2019 -- 2020}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Contributed to development of a statistical emulator for hydrologic model output using boundary-condition inputs; %
 	evaluated the computational efficiency of Julia and Python for vectorized calculation and numerical optimization in distributed, parallel frameworks.}
-\cventry{2019}{Data Science Intern}{Jupiter Intelligence}{Boulder, CO}{}{Developed a stochastic generator of physically realistic, multi-decadal sea level rise projections and quantified the model's variability in a Monte Carlo experiment.}
-\cventry{2017-2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{Developed \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, a JavaScript library for interactive visualization of tradeoff sets in multi-objective optimization problems, e.g., water resources planning and decision making.}
-\cventry{2017}{Data Engineering Intern}{VictorOps}{Boulder, CO}{}{Developed a proprietary R package to streamline database queries and common data-wrangling operations.}
+\cventry{2019}{Data Science Intern}{Jupiter Intelligence}{Boulder, CO}{}{Developed a stochastic generator of physically motivated, multi-decadal sea-level-rise projections and quantified the model's variability in a Monte-Carlo experiment.}
+\cventry{2017 -- 2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{Developed \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, a JavaScript library for interactive visualization of multi-objective optimization problems such as water resources planning and decision making.}
+% \cventry{2017}{Data Engineering Intern}{VictorOps}{Boulder, CO}{}{Developed a proprietary R package to streamline database queries and common data-wrangling operations.}
 
 
 % Publications from a Biblatex
 \nocite{*}
-%\section{Publications}
-%\printbibliography[title={In Preparation}, heading=subbibliography, type=unpublished, env=itemize]
-%\printbibliography[title={Published}, heading=subbibliography, type=article, env=enumerate]
-\printbibliography[title={Publications}, type=article, env=enumerate]
+% \section{Publications}
+% \printbibliography[title={In Press}, heading=subbibliography, type=article, env=itemize]
+% \printbibliography[title={Published}, heading=subbibliography, type=article, env=enumerate]
+\printbibliography[title={Publications}, env=enumerate]
+
+
+\section{Research Grants}
+\cvline{2023}{NASA 23-OCOST23-0001, Student Investigator\newline {\small ``Hierarchical Spatio-Temporal Statistical Methods for Analyzing OCO-2/3 Data''}}
+
+
+\section{Honors, Awards, \& Fellowships}
+\cvline{2021}{Allison Harcourt Poster Award: 1st, Early Career \& Student Statisticians Conference}
+\cvline{2021}{ECSSC 2021 Scholarship, Early Career \& Student Statisticians Conference}
+\cvline{2021}{Statistical Data Science Scholarship, Australian Mathematical Sciences Institute (AMSI)}
+\cvline{2020 -- 2024}{University Postgraduate Award, University of Wollongong}
+\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October, 2020}
+% \cvline{2019}{Active Learning Award, College of Engineering and Applied Science, University of Colorado}
+% \cvline{2017}{Global Seminar Funding, Engineering Honors Program, University of Colorado}
+% \cvline{2016}{Honorable Mention, International Mathematical Contest in Modeling, Consortium for Mathematics and its Applications}
+\cvline{2015 -- 2019}{Dean's List, University of Colorado}
+\cvline{2015 -- 2019}{Engineering Merit Scholarship, University of Colorado}
+\cvline{2015 -- 2019}{Hale Esteemed Scholar Award, University of Colorado}
+
 
 \section{Presentations}
 \subsection{Conferences \& Workshops}
@@ -277,67 +293,55 @@ Ecosystem responses to environmental change%
 \cvline{2020-12}{Flexible methodology for hyperlocal flooding risk due to sea level rise \newline{} American Geophysical Union (AGU) Fall Meeting, Virtual}
 
 
-\section{Conferences}
-\cvline{2023-07}{The International Environmetrics Society (TIES) 2023 Regional Meeting. Virtual.}
-\cvline{2023-01}{American Meteorological Society (AMS) 103rd Annual Meeting. Denver, CO, USA.}
-\cvline{2022-06}{International Statistical Ecology Conference (ISEC). Virtual.}
-\cvline{2021-07}{Australian and New Zealand Statistical Conference (ANZSC). Virtual.}
-\cvline{2019-07}{Joint Statistical Meetings (JSM). Denver, CO, USA.}
+% \section{Conferences}
+% \cvline{2023-07}{The International Environmetrics Society (TIES) 2023 Regional Meeting. Virtual.}
+% \cvline{2023-01}{American Meteorological Society (AMS) 103rd Annual Meeting. Denver, CO, USA.}
+% \cvline{2022-06}{International Statistical Ecology Conference (ISEC). Virtual.}
+% \cvline{2021-07}{Australian and New Zealand Statistical Conference (ANZSC). Virtual.}
+% \cvline{2019-07}{Joint Statistical Meetings (JSM). Denver, CO, USA.}
 
-\section{Workshops}
-\cvline{2021-07}{``Winter School on Statistical Data Science.'' Australian Mathematical Sciences Institute (AMSI). Virtual.}
+% \section{Workshops}
+% \cvline{2021-07}{``Winter School on Statistical Data Science.'' Australian Mathematical Sciences Institute (AMSI). Virtual.}
 
 
 \section{Teaching}
-\cvline{Fall 2023}{Tutor, STAT 3/801: Statistical Methods for Data Science, School of Mathematics and Applied Statistics, University of Wollongong}
-\cvline{Spring 2023}{Tutor, STAT 3/832: Generalised Linear Models, School of Mathematics and Applied Statistics, University of Wollongong}
-\cvline{Fall 2018}{Teaching Assistant, APPM 4/5350: Fourier Series and Boundary Value Problems, Department of Applied Mathematics, University of Colorado}
-\cvline{Fall 2016}{Teaching Assistant, CSCI 1320: Introduction to Programming for Engineers, Department of Computer Science, University of Colorado}
+\cvline{Fall 2023}{Tutor, STAT 3/801: Statistical Methods for Data Science, University of Wollongong}
+\cvline{Spring 2023}{Tutor, STAT 3/832: Generalised Linear Models, University of Wollongong}
+\cvline{Fall 2018}{Teaching Assistant, APPM 4/5350: Fourier Series and Boundary Value Problems, University of Colorado}
+\cvline{Fall 2016}{Teaching Assistant, CSCI 1320: Introduction to Programming for Engineers, University of Colorado}
 
-\section{Service, Leadership, \& Synergistic Activities}
-\cventry{2019}{Radio Show Host}{Department of Applied Mathematics, University of Colorado}{Boulder, CO}{}{Probably Novel Radio Show and Podcast intends to bring research achievements of STEM undergraduates to the public sphere and make them more accessible to a broad audience.}
-\cvline{2017--present}{\textbf{Open-Source Developer} \newline {\small Projects with accepted pull-requests include \href{https://github.com/arviz-devs/arviz}{ArviZ}, \href{https://github.com/ParasolJS/parasol-es}{Parasol}, \href{https://github.com/BigFatDog/parcoords-es}{parcoords-es}, and \href{https://github.com/mamba-org}{Mamba}}}
-\cventry{2017--2018}{Resident Advisor}{University of Colorado}{Boulder, CO}{}{}
-\cventry{2016--2018}{Engineering Honors Program Mentor}{College of Engineering \& Applied Science, University of Colorado}{Boulder, CO}{}{}
 
-\subsection{Writing}
-\cvline{2022-03}{``\href{https://www.uow.edu.au/niasra/our-research/centre-for-environmental-informatics/web-projects/global-co2-flux/}{Global CO2 Flux: Bayesian statistical inversion using the WOMBAT framework}.'' Centre for Environmental Informatics, University of Wollongong}
-
-\section{Honors, Awards, \& Fellowships}
-\cvline{2021}{Allison Harcourt Poster Award: 1st, Early Career \& Student Statisticians Conference}
-\cvline{2021}{ECSSC 2021 Scholarship, Early Career \& Student Statisticians Conference}
-\cvline{2021}{Statistical Data Science Scholarship, Australian Mathematical Sciences Institute (AMSI)}
-\cvline{2020--2024}{University Postgraduate Award, University of Wollongong}
-\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October, 2020}
-\cvline{2019}{Active Learning Award, College of Engineering and Applied Science, University of Colorado}
-\cvline{2017}{Global Seminar Funding, Engineering Honors Program, University of Colorado}
-\cvline{2016}{Honorable Mention, International Mathematical Contest in Modeling, Consortium for Mathematics and its Applications}
-\cvline{2015--2019}{Dean's List, University of Colorado}
-\cvline{2015--2019}{Engineering Merit Scholarship, University of Colorado}
-\cvline{2015--2019}{Hale Esteemed Scholar Award, University of Colorado}
-
-\section{Professional Memberships}
-\cvline{2023--present}{The International Environmetrics Society (TIES)}
-\cvline{2023--present}{International Association for Statistical Computing (IASC)}
-\cvline{2023--present}{Bernoulli Society (BS)}
-\cvline{2023--present}{International Statistical Institute (ISI)}
-\cvline{2021--present}{Statistical Society of Australia (SSA)}
-\cvline{2019--present}{American Statistical Association (ASA)}
+\section{Service, Leadership, \& Writing}
+\cvline{2017 -- present}{Open-Source Developer, Pull-requests accepted by \href{https://github.com/arviz-devs/arviz}{\texttt{ArviZ}}, \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, \href{https://github.com/BigFatDog/parcoords-es}{\texttt{parcoords-es}}, and \href{https://github.com/mamba-org}{\texttt{Mamba}}}
+\cvline{2022}{``\href{https://www.uow.edu.au/niasra/our-research/centre-for-environmental-informatics/web-projects/global-co2-flux/}{Global CO$_2$ Flux: Bayesian statistical inversion using the WOMBAT framework}.'' Centre for Environmental Informatics, University of Wollongong}
+\cvline{2019}{Radio Show Host, ``Probably Novel Podcast,'' Department of Applied Mathematics, University of Colorado}
+\cvline{2016 -- 2018}{Mentor, Engineering Honors Program, University of Colorado}
 
 
 \section{Computer Skills}
 \cvline{Advanced}{Git, \LaTeX, Linux, Python, R}
 \cvline{Intermediate}{Julia, Matlab, Shell-scripting}
 
-\section{Selected Coursework (* indicates graduate level)}
-%\subsection{Probability \& Statistics}
-\cvline{Probability \& Statistics}{Spatial Statistics*, Statistical Modeling*, Statistical Learning, Mathematical Statistics*, Applied Probability, Markov Processes and Monte Carlo Simulations*, Time Series Analysis*, Experimental Design*}
-%\subsection{Applied Mathematics}
-\cvline{Applied Mathematics}{Multivariable Calculus, Differential Equations, Linear Algebra, Numerical Analysis*, Real Analysis, Complex Analysis, Fourier Series and Boundary Value Problems, Data Assimilation*}
-%\subsection{Computer Science}
-\cvline{Computer Science}{Data Structures, Computer Systems, Algorithms, Introduction to Data Science}
-%\subsection{Physical Science}
-\cvline{Physical Science}{Climate Modeling, Physical Oceanography, Radiative Transfer and Remote Sensing*, Principles of Ecology, Objective Data Analysis*}
+
+% \section{Professional Memberships}
+% \cvitem{}{
+%   American Statistical Association (ASA) \textbullet\,%
+%   Bernoulli Society (BS) \textbullet\,%
+%   International Association for Statistical Computing (IASC) \textbullet\,%
+%   International Statistical Institute (ISI) \textbullet\,%
+%   Statistical Society of Australia (SSA) \textbullet\,%
+%   The International Environmetrics Society (TIES)
+% }
+
+% \section{Selected Coursework (* indicates graduate level)}
+% %\subsection{Probability \& Statistics}
+% \cvline{Probability \& Statistics}{Spatial Statistics*, Statistical Modeling*, Statistical Learning, Mathematical Statistics*, Applied Probability, Markov Processes and Monte Carlo Simulations*, Time Series Analysis*, Experimental Design*}
+% %\subsection{Applied Mathematics}
+% \cvline{Applied Mathematics}{Multivariable Calculus, Differential Equations, Linear Algebra, Numerical Analysis*, Real Analysis, Complex Analysis, Fourier Series and Boundary Value Problems, Data Assimilation*}
+% %\subsection{Computer Science}
+% \cvline{Computer Science}{Data Structures, Computer Systems, Algorithms, Introduction to Data Science}
+% %\subsection{Physical Science}
+% \cvline{Physical Science}{Climate Modeling, Physical Oceanography, Radiative Transfer and Remote Sensing*, Principles of Ecology, Objective Data Analysis*}
 
 
 
@@ -354,11 +358,7 @@ Ecosystem responses to environmental change%
 % \enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
 % \makelettertitle
 
-% Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
-
-% Suspendisse commodo, massa eu congue tincidunt, elit mauris pellentesque orci, cursus tempor odio nisl euismod augue. Aliquam adipiscing nibh ut odio sodales et pulvinar tortor laoreet. Mauris a accumsan ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vulputate sem vehicula ipsum varius nec tempus dui dapibus. Phasellus et est urna, ut auctor erat. Sed tincidunt odio id odio aliquam mattis. Donec sapien nulla, feugiat eget adipiscing sit amet, lacinia ut dolor. Phasellus tincidunt, leo a fringilla consectetur, felis diam aliquam urna, vitae aliquet lectus orci nec velit. Vivamus dapibus varius blandit.
-
-% Duis sit amet magna ante, at sodales diam. Aenean consectetur porta risus et sagittis. Ut interdum, enim varius pellentesque tincidunt, magna libero sodales tortor, ut fermentum nunc metus a ante. Vivamus odio leo, tincidunt eu luctus ut, sollicitudin sit amet metus. Nunc sed orci lectus. Ut sodales magna sed velit volutpat sit amet pulvinar diam venenatis.
+% Lorem ipsum dolor sit ... 
 
 % Albert Einstein discovered that $e=mc^2$ in 1905.
 
