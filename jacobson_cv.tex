@@ -79,7 +79,7 @@
   url=false,
   isbn=false
 ]{biblatex}
-\addbibresource{publications_inprep.bib}
+% \addbibresource{publications_inprep.bib}
 \addbibresource{publications.bib}
   
 \defbibenvironment{itemize}
@@ -203,6 +203,9 @@
     
 % Set titles to sentence case
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{titlecase:title}{\MakeSentenceCase*{#1}}
+
+% Remove "p\pp" preceeding page range for journal articles
+\DeclareFieldFormat[article]{pages}{#1}
 
 % Comma before and after journal volume
 \renewbibmacro*{volume+number+eid}{%
