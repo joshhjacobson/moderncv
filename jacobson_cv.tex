@@ -34,7 +34,7 @@
 %----------------------------------------------------------------
 \name{Josh}{Jacobson}
 %\title{Curriculum Vitae}                           % optional, remove / comment the line if not wanted
-% \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\address{Wollongong, NSW, Australia}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 % \phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted
 % \phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
 % \phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
@@ -199,22 +199,32 @@
 
 % Remove quotes from title and add hyperlink
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}%
+    % {\color{color0}#1\isdot}
     {\usebibmacro{string+doiurlisbn}{\color{color0}#1\isdot}}
     
 % Set titles to sentence case
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{titlecase:title}{\MakeSentenceCase*{#1}}
 
 % Remove "p\pp" preceeding page range for journal articles
-\DeclareFieldFormat[article]{pages}{#1}
+% \DeclareFieldFormat[article]{pages}{#1}
 
 % Comma before and after journal volume
+% \renewbibmacro*{volume+number+eid}{%
+%   \setunit*{\addcomma\space}% 
+%   \printfield{volume}%
+%   \setunit*{\addcomma\space}%
+%   \printfield{number}%
+%   \setunit{\addcomma\space}%
+%   \printfield{eid}}
+% Volume/issue number in parentheses
 \renewbibmacro*{volume+number+eid}{%
-  \setunit*{\addcomma\space}% 
-  \printfield{volume}%
   \setunit*{\addcomma\space}%
+  \printfield{volume}%
+  % \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
   \printfield{number}%
-  \setunit{\addcomma\space}%
+  \setunit*{\addcomma\space}%
   \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 
 
 %----------------------------
@@ -228,11 +238,10 @@
 
 \section{Research Interests}
 \cvitem{}{
-Spatio-temporal statistics \textbullet\,%
-Bayesian hierarchical modeling \textbullet\,%
-Approximate Bayesian computation \textbullet\,%
-Extreme-value theory \textbullet\,%
-Computational statistics \textbullet\,%
+Spatio-temporal statistics \textbullet\ %
+Bayesian hierarchical modeling \textbullet\ %
+Extreme-value theory %
+Computational statistics \textbullet\ %
 Climate \& environmental applications
 }
 
@@ -242,21 +251,21 @@ Climate \& environmental applications
 \cventry{2015 -- 2019}{B.S., Applied Mathematics}{University of Colorado, Graduation with Honors}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
 
 \section{Experience}
-\cventry{2021 -- present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{Investigated extending the centre's Bayesian hierarchical flux-inversion framework for compatibility with different atmospheric transport models; translated technical research articles into public-facing content.}
+\cventry{2021 -- present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{Investigated extending the centre's Bayesian hierarchical flux-inversion framework for compatibility with different atmospheric transport models; converted technical research articles into public-facing content.}
 \cventry{2021 -- 2023}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Developed a non-stationary Bayesian copula model for analysis of multivariate extreme events; researched and implemented an approximate Bayesian computation algorithm suitable for non-stationary data; collaborated as a core developer of a proprietary Python package for statistical modeling.}
 \cventry{2019 -- 2020}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Contributed to development of a statistical emulator for hydrologic model output using boundary-condition inputs; %
 	evaluated the computational efficiency of Julia and Python for vectorized calculation and numerical optimization in distributed, parallel frameworks.}
 \cventry{2019}{Data Science Intern}{Jupiter Intelligence}{Boulder, CO}{}{Developed a stochastic generator of physically motivated, multi-decadal sea-level-rise projections and quantified the model's variability in a Monte-Carlo experiment.}
-\cventry{2017 -- 2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{Developed \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, a JavaScript library for interactive visualization of multi-objective optimization problems such as water resources planning and decision making.}
+\cventry{2017 -- 2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{Developed \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, a JavaScript library for interactive visualization of multi-objective optimization problems such as water resources planning and decision-making.}
 % \cventry{2017}{Data Engineering Intern}{VictorOps}{Boulder, CO}{}{Developed a proprietary R package to streamline database queries and common data-wrangling operations.}
 
 
 % Publications from a Biblatex
 \nocite{*}
-% \section{Publications}
-% \printbibliography[title={In Press}, heading=subbibliography, type=article, env=itemize]
-% \printbibliography[title={Published}, heading=subbibliography, type=article, env=enumerate]
-\printbibliography[title={Publications}, env=enumerate]
+\section{Publications}
+\printbibliography[title={In Preparation}, heading=subbibliography, type=unpublished, env=itemize]
+\printbibliography[title={Published}, heading=subbibliography, type=article, env=enumerate]
+% \printbibliography[title={Publications}, env=enumerate]
 
 
 \section{Honors, Awards, \& Fellowships}
@@ -264,7 +273,7 @@ Climate \& environmental applications
 \cvline{2021}{ECSSC 2021 Scholarship, Early Career \& Student Statisticians Conference}
 \cvline{2021}{Statistical Data Science Scholarship, Australian Mathematical Sciences Institute (AMSI)}
 \cvline{2020 -- 2024}{University Postgraduate Award, University of Wollongong}
-\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October, 2020}
+\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October 2020}
 % \cvline{2019}{Active Learning Award, College of Engineering and Applied Science, University of Colorado}
 % \cvline{2017}{Global Seminar Funding, Engineering Honors Program, University of Colorado}
 % \cvline{2016}{Honorable Mention, International Mathematical Contest in Modeling, Consortium for Mathematics and its Applications}
@@ -273,8 +282,11 @@ Climate \& environmental applications
 \cvline{2015 -- 2019}{Hale Esteemed Scholar Award, University of Colorado}
 
 
-\section{Research Grants}
-\cvline{2023}{NASA 23-OCOST23-0001, Student Investigator\newline {\small ``Hierarchical Spatio-Temporal Statistical Methods for Analyzing OCO-2/3 Data''}}
+\section{Grants}
+\cvline{2023 -- 2025}{NASA Research Opportunities in
+Space and Earth Science (ROSES): ``Hierarchical Spatio-Temporal Statistical Methods for Analyzing OCO-2/3 Data'' \newline \small
+PI: Michael Bertolacci; Co-PIs: Noel Cressie, Andrew Zammit Mangion, Beata Bukosa; Students: Josh Jacobson, Daemon Kennett, Alan Pearse \newline
+Award: \$0 (\textit{International organizations are not eligible for cash funding, but the award grants membership of the OCO Science Team.})}
 
 
 \section{Presentations}
@@ -295,6 +307,7 @@ Climate \& environmental applications
 \cvline{2019-08}{Uncertainty quantification for sea level rise \newline{} Jupiter Intelligence, Boulder, CO, USA}
 
 \subsection{Posters}
+\cvline{2024-10}{A multivariate Bayesian hierarchical model for global CO\textsubscript{2} surface flux \newline{} American Statistical Association ENVR Workshop, Boulder, CO, USA}
 \cvline{2021-07}{Multivariate spatial-dependence modelling with satellite data \newline{} Early Career \& Student Statisticians Conference, Virtual}
 \cvline{2020-12}{Flexible methodology for hyperlocal flooding risk due to sea level rise \newline{} American Geophysical Union (AGU) Fall Meeting, Virtual}
 
@@ -311,6 +324,7 @@ Climate \& environmental applications
 
 
 \section{Teaching}
+\cvline{Fall 2024}{Teaching Assistant, STAT 3/804: Stochastic Processes and Time Series Analysis, University of Wollongong}
 \cvline{Spring 2024}{Teaching Assistant, STAT 3/832: Generalised Linear Models, University of Wollongong}
 \cvline{Fall 2023}{Teaching Assistant, STAT 3/801: Statistical Methods for Data Science, University of Wollongong}
 \cvline{Spring 2023}{Teaching Assistant, STAT 3/832: Generalised Linear Models, University of Wollongong}
@@ -318,12 +332,12 @@ Climate \& environmental applications
 \cvline{Fall 2016}{Teaching Assistant, CSCI 1320: Introduction to Programming for Engineers, University of Colorado}
 
 
-\section{Service, Leadership, \& Writing}
-\cvline{2024 -- present}{Postgraduate Seminar Series Head, School of Mathematics and Applied Statistics, University of Wollongong}
-\cvline{2022}{``\href{https://www.uow.edu.au/niasra/our-research/centre-for-environmental-informatics/web-projects/global-co2-flux/}{Global CO$_2$ Flux: Bayesian statistical inversion using the WOMBAT framework}.'' Centre for Environmental Informatics, University of Wollongong}
+\section{Service \& Leadership}
+\cvline{2024}{Postgraduate Seminar Series Head, School of Mathematics and Applied Statistics, University of Wollongong}
+% \cvline{2022}{``\href{https://www.uow.edu.au/niasra/our-research/centre-for-environmental-informatics/web-projects/global-co2-flux/}{Global CO$_2$ Flux: Bayesian statistical inversion using the WOMBAT framework}.'' Centre for Environmental Informatics, University of Wollongong}
 \cvline{2019}{Radio Show Host, ``Probably Novel Podcast,'' Department of Applied Mathematics, University of Colorado}
-\cvline{2017 -- present}{Open-Source Developer, Pull-requests accepted by \href{https://github.com/arviz-devs/arviz}{\texttt{ArviZ}}, \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, \href{https://github.com/BigFatDog/parcoords-es}{\texttt{parcoords-es}}, and \href{https://github.com/mamba-org}{\texttt{Mamba}}}
-\cvline{2016 -- 2018}{Mentor, Engineering Honors Program, University of Colorado}
+% \cvline{2017 -- present}{Open-Source Developer, Pull-requests accepted by \href{https://github.com/arviz-devs/arviz}{\texttt{ArviZ}}, \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, \href{https://github.com/BigFatDog/parcoords-es}{\texttt{parcoords-es}}, and \href{https://github.com/mamba-org}{\texttt{Mamba}}}
+\cvline{2016 -- 2018}{Academic Mentor, Engineering Honors Program, University of Colorado}
 
 
 \section{Computer Skills}
@@ -334,8 +348,9 @@ Climate \& environmental applications
 % \section{Professional Memberships}
 % \cvitem{}{
 %   American Statistical Association (ASA) \textbullet\,%
-%   Bernoulli Society (BS) \textbullet\,%
+%   % Bernoulli Society (BS) \textbullet\,%
 %   International Association for Statistical Computing (IASC) \textbullet\,%
+%   International Society for Bayesian Analysis (ISBA) \textbullet\,%
 %   International Statistical Institute (ISI) \textbullet\,%
 %   Statistical Society of Australia (SSA) \textbullet\,%
 %   The International Environmetrics Society (TIES)
