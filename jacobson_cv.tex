@@ -9,7 +9,7 @@
 % FORMATING
 %----------------------------------------------------------------
 
-\documentclass[10.5pt, letterpaper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[10pt, letterpaper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 %% moderncv themes
 % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
@@ -240,7 +240,7 @@
 \cvitem{}{
 Spatio-temporal statistics \textbullet\ %
 Bayesian hierarchical modeling \textbullet\ %
-Extreme-value theory %
+Extreme-value theory \newline %
 Computational statistics \textbullet\ %
 Climate \& environmental applications
 }
@@ -250,14 +250,29 @@ Climate \& environmental applications
 \cventry{2018 -- 2020}{M.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Advisors: Will Kleiber \& Michael Scheuerer}
 \cventry{2015 -- 2019}{B.S., Applied Mathematics}{University of Colorado, Graduation with Honors}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
 
-\section{Experience}
-\cventry{2021 -- present}{Graduate Research Assistant}{Centre for Environmental Informatics, University of Wollongong}{Wollongong, NSW}{}{Investigated extending the centre's Bayesian hierarchical flux-inversion framework for compatibility with different atmospheric transport models; converted technical research articles into public-facing content.}
-\cventry{2021 -- 2023}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Developed a non-stationary Bayesian copula model for analysis of multivariate extreme events; researched and implemented an approximate Bayesian computation algorithm suitable for non-stationary data; collaborated as a core developer of a proprietary Python package for statistical modeling.}
-\cventry{2019 -- 2020}{Data Science Consultant}{Jupiter Intelligence}{Boulder, CO}{}{Contributed to development of a statistical emulator for hydrologic model output using boundary-condition inputs; %
-	evaluated the computational efficiency of Julia and Python for vectorized calculation and numerical optimization in distributed, parallel frameworks.}
-\cventry{2019}{Data Science Intern}{Jupiter Intelligence}{Boulder, CO}{}{Developed a stochastic generator of physically motivated, multi-decadal sea-level-rise projections and quantified the model's variability in a Monte-Carlo experiment.}
-\cventry{2017 -- 2019}{Undergraduate Research Assistant}{Department of Environmental Engineering, University of Colorado}{Boulder, CO}{}{Developed \href{https://github.com/ParasolJS/parasol-es}{\texttt{Parasol}}, a JavaScript library for interactive visualization of multi-objective optimization problems such as water resources planning and decision-making.}
-% \cventry{2017}{Data Engineering Intern}{VictorOps}{Boulder, CO}{}{Developed a proprietary R package to streamline database queries and common data-wrangling operations.}
+\section{Research Experience}
+
+\cventry{2020 -- present}{Spatio-temporal statistics and Bayesian inference}{Ph.D. Student, University of Wollongong}{Wollongong, NSW}{}{
+  Researched novel statistical methods for spatial and spatio-temporal data problems, with emphasis on hierarchical modeling and Bayesian inference.
+  Leveraged high-performance computing to implement scalable algorithms for large remote-sensing datasets efficiently.
+  Applications include multivariate spatial prediction (cokriging) \parencite{JacobsonEtAl2023} and spatio-temporal prediction of global
+  carbon-dioxide fluxes at Earth's surface \parencite{CressieEtAl2023, JacobsonEtAl2024}.
+}
+
+\cventry{2020 -- 2022}{Extreme-value analysis and approximate Bayesian computation}{Data Science Consultant, Jupiter Intelligence}{Boulder, CO}{}{
+  Developed a Bayesian spatial copula model to analyze multivariate extreme events, with application to wind speed and precipitation data from hurricane simulations.
+  Presented results at the 2023 Annual Meeting of the American Meteorological Society. Separately, implemented an approximate Bayesian computation algorithm for non-stationary data to parallelize inference across distributed computing resources.
+}
+
+\cventry{2019 -- 2020}{Spatial forecast verification}{Master's Student, University of Colorado}{Boulder, CO}{}{
+  Assessed the utility of fractional exceedance histograms in detecting miscalibrated spatial structures within ensemble forecast fields, focusing on downscaled precipitation forecasts.
+  This work was published in \textit{Nonlinear Processes in Geophysics} \parencite{JacobsonEtAl2020} and was selected for Paper of the Month by the editors.
+}
+
+\cventry{2017 -- 2018}{High-dimensional visualization}{Undergraduate Apprentice, University of Colorado}{Boulder, CO}{}{
+  Authored an interactive parallel coordinates visualization library for tradeoff analysis in multi-objective optimization problems, with application to water resources management.
+  This work was published in \textit{Environmental Modelling \& Software} \parencite{RasemanEtAl2019}.
+}
 
 
 % Publications from a Biblatex
@@ -273,7 +288,7 @@ Climate \& environmental applications
 \cvline{2021}{ECSSC 2021 Scholarship, Early Career \& Student Statisticians Conference}
 \cvline{2021}{Statistical Data Science Scholarship, Australian Mathematical Sciences Institute (AMSI)}
 \cvline{2020 -- 2024}{University Postgraduate Award, University of Wollongong}
-\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by Editors of Nonlinear Processes in Geophysics for paper of the month, October 2020}
+\cvline{2020}{NPG Paper of the Month Award \parencite{JacobsonEtAl2020} chosen by editors of \textit{Nonlinear Processes in Geophysics} for paper of the month, October 2020}
 % \cvline{2019}{Active Learning Award, College of Engineering and Applied Science, University of Colorado}
 % \cvline{2017}{Global Seminar Funding, Engineering Honors Program, University of Colorado}
 % \cvline{2016}{Honorable Mention, International Mathematical Contest in Modeling, Consortium for Mathematics and its Applications}

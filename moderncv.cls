@@ -162,7 +162,8 @@
           \newlength{\pagenumberwidth}%
           \settowidth{\pagenumberwidth}{\color{color2}\pagenumberfont\thepage/\pageref{lastpage}}%
           \fancypagestyle{plain}{%
-            \fancyfoot[l]{\color{color2}\pagenumberfont\today}%
+            % \fancyfoot[l]{\color{color2}\pagenumberfont\today}%
+            \fancyfoot[l]{\color{color2}\pagenumberfont September 30, 2024}%
             \fancyfoot[c]{\color{color2}\pagenumberfont \@firstname{} \@lastname{}\textperiodcentered Curriculum Vitae}%
             \fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\thepage/\pageref{lastpage}}}}% the parbox is required to ensure alignment with a possible center footer (e.g., as in the casual style)
           \pagestyle{plain}}{}}\fi}%
