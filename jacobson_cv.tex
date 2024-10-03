@@ -15,7 +15,7 @@
 % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvstyle{classic}
 % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-\moderncvcolor{blue}
+\moderncvcolor{black}
 \moderncvicons{awesome}
 %\renewcommand{\familydefault}{\rmdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
@@ -250,22 +250,33 @@ Climate \& environmental applications
 \cventry{2018 -- 2020}{M.S., Applied Mathematics}{University of Colorado}{Boulder, CO}{}{Advisors: Will Kleiber \& Michael Scheuerer}
 \cventry{2015 -- 2019}{B.S., Applied Mathematics}{University of Colorado, Graduation with Honors}{Boulder, CO}{}{Minors: Computer Science, Atmospheric \& Oceanic Sciences}
 
+% Suggestion from Xiaotian: If you target a methodology-oriented position, give more weight to the modeling approach or the models you've used.
+
 \section{Research Experience}
 
-\cventry{2020 -- present}{Spatio-temporal statistics and Bayesian inference}{Ph.D. Student, University of Wollongong}{Wollongong, NSW}{}{
-  Researched novel statistical methods for spatial and spatio-temporal data problems, with emphasis on hierarchical modeling and Bayesian inference.
-  Leveraged high-performance computing to implement scalable algorithms for large remote-sensing datasets efficiently.
-  Applications include multivariate spatial prediction (cokriging) \parencite{JacobsonEtAl2023} and spatio-temporal prediction of global
-  carbon-dioxide fluxes at Earth's surface \parencite{CressieEtAl2023, JacobsonEtAl2024}.
+% \cventry{2020 -- present}{Spatio-temporal statistics and Bayesian inference}{Ph.D. Student, University of Wollongong}{Wollongong, NSW}{}{
+%   Researched novel statistical methods for spatial and spatio-temporal data problems, with emphasis on hierarchical modeling and Bayesian inference.
+%   Leveraged high-performance computing to implement scalable algorithms for large remote-sensing datasets efficiently.
+%   Applications include multivariate spatial prediction (cokriging) \parencite{JacobsonEtAl2023} and spatio-temporal prediction of global
+%   carbon-dioxide fluxes at Earth's surface \parencite{CressieEtAl2023, JacobsonEtAl2024}.
+% }
+
+\cventry{2020 -- present}{Bayesian hierarchical modeling for multivariate spatio-temporal processes}{Ph.D. Student, University of Wollongong}{Wollongong, NSW}{}{
+  Improved inference on the spatio-temporal distribution of natural carbon fluxes across Earth's surface by extending a Bayesian hierarchical assimilation framework through conditioning on an additional environmental process \parencite{CressieEtAl2023, JacobsonEtAl2024}.
+  Assimilated large remote-sensing datasets (\textasciitilde 2M observations) using high-performance computing to implement efficient MCMC algorithms, including slice sampling and exact Hamiltonian Monte Carlo for constrained Gaussian distributions.
+  Separately, developed a method for multivariate spatial prediction (cokriging) over North America using the full bivariate Mat\'ern covariance model with parameters estimated from empirical (cross-) semivariograms by composite weighted least squares \parencite{JacobsonEtAl2023}.
 }
 
-\cventry{2020 -- 2022}{Extreme-value analysis and approximate Bayesian computation}{Data Science Consultant, Jupiter Intelligence}{Boulder, CO}{}{
-  Developed a Bayesian spatial copula model to analyze multivariate extreme events, with application to wind speed and precipitation data from hurricane simulations.
-  Presented results at the 2023 Annual Meeting of the American Meteorological Society. Separately, implemented an approximate Bayesian computation algorithm for non-stationary data to parallelize inference across distributed computing resources.
+\cventry{2020 -- 2022}{Bayesian spatial copula modeling for multivariate extreme events}{Data Science Consultant, Jupiter Intelligence}{Boulder, CO}{}{
+  Analyzed spatial patterns in joint return periods for regional-scale wind speed and precipitation simulations by linking Gumbel and gamma marginal distributions through a Gumbel copula model for joint dependence.
+  Accommodated nonstationarity in the marginal distributions through spatially-varying parameters.
+  Conducted parameter inference via the No-U-Turn Sampler (NUTS) with chains run in parallel on GPU cloud instances.
+  Presented results at the 2023 Annual Meeting of the American Meteorological Society.
 }
 
 \cventry{2019 -- 2020}{Spatial forecast verification}{Master's Student, University of Colorado}{Boulder, CO}{}{
-  Assessed the utility of fractional exceedance histograms in detecting miscalibrated spatial structures within ensemble forecast fields, focusing on downscaled precipitation forecasts.
+  Investigated the utility of threshold exceedance histograms for assessing calibration of spatial structure within ensemble forecast fields, focusing on downscaled precipitation forecasts.
+  Tested sensitivity to different correlation structures and exceedance thresholds in an extensive simulation study using multivariate Gaussian processes to generate correlated ensembles.
   This work was published in \textit{Nonlinear Processes in Geophysics} \parencite{JacobsonEtAl2020} and was selected for Paper of the Month by the editors.
 }
 
